@@ -1,0 +1,21 @@
+tv@TV-VirtualBox:~/Study/ARMStudy/2$ arm-none-eabi-gdb -q
+(gdb) target sim
+Connected to the simulator.
+(gdb) load test.elf
+Loading section .text, size 0x4c vma 0x0
+Start address 0x0
+Transfer rate: 608 bits in <1 sec.
+(gdb) file test.elf 
+Reading symbols from test.elf...done.
+(gdb) b c_entry 
+Breakpoint 1 at 0x38: file test.c, line 2.
+(gdb) r
+Starting program: /home/tv/Study/ARMStudy/2/test.elf 
+
+Breakpoint 1, c_entry () at test.c:2
+2         return 0;
+(gdb) bt
+#0  c_entry () at test.c:2
+#1  0x00000028 in Reset_Handler () at startup.s:15
+Backtrace stopped: previous frame identical to this frame (corrupt stack?)
+(gdb) 

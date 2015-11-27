@@ -1,0 +1,16 @@
+tv@TV-VirtualBox:~/helloarm$ qemu-system-arm -M versatilepb -m 128M -nographic -kernel test.bin
+pulseaudio: set_sink_input_volume() failed
+pulseaudio: Reason: Invalid argument
+pulseaudio: set_sink_input_mute() failed
+pulseaudio: Reason: Invalid argument
+Hello world!
+
+Ctrl+a x to exit
+
+
+tv@TV-VirtualBox:~/helloarm$ qemu-system-arm -M versatilepb -m 128M -nographic -kernel test.bin -s -S
+pulseaudio: set_sink_input_volume() failed
+pulseaudio: Reason: Invalid argument
+pulseaudio: set_sink_input_mute() failed
+pulseaudio: Reason: Invalid argument
+
