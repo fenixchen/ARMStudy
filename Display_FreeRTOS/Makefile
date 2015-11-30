@@ -54,7 +54,7 @@ objdir:
 	@$(foreach d, $(OBJ_DIRS), mkdir -p $(d)) 
 
 clean:
-	@rm -rf $(OBJDIR) $(DISPLAY_BIN) $(DISPLAY_ELF)
+	rm -rf $(OBJDIR) $(DISPLAY_BIN) $(DISPLAY_ELF)
 
 $(OBJDIR)Drivers/startup.o:Drivers/startup.s
 	$(CC) -c $< -o $@ $(CFLAGS)
