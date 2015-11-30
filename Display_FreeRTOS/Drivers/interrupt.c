@@ -1,39 +1,3 @@
-/*
-Copyright 2013, Jernej Kovacic
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-*/
-
-
-/**
- * @file
- *
- * Implementation of the board's Primary Interrupt Controller (PIC) functionality.
- *
- * Secondary Interrupt Controller (SIC) is currently not supported.
- *
- * More info about the board and the PIC controller:
- * - Versatile Application Baseboard for ARM926EJ-S, HBI 0118 (DUI0225D):
- *   http://infocenter.arm.com/help/topic/com.arm.doc.dui0225d/DUI0225D_versatile_application_baseboard_arm926ej_s_ug.pdf
- * - PrimeCell Vectored Interrupt Controller (PL190) Technical Reference Manual (DDI0181):
- *   http://infocenter.arm.com/help/topic/com.arm.doc.ddi0181e/DDI0181.pdf
- *
- * Useful details about the CPU's IRQ mode are available at:
- * - ARM9EJ-S, Technical Reference Manual (DDI0222):
- *   http://infocenter.arm.com/help/topic/com.arm.doc.ddi0222b/DDI0222.pdf
- *
- * @author Jernej Kovacic
- */
 
 /*
  * TODO

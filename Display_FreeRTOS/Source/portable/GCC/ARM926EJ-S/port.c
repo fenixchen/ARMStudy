@@ -1,14 +1,3 @@
-/*
- * Since all ARM cores are functionally very similar, port.c from
- * the officially supported GCC/ARM7_LPC2000 port can be reused for
- * ARM926EJ-S too.
- *
- * prvSetupTimerInterrupt() was modified to handle timer and VIC properly
- * and minor modifications of the timer's ISR routine (vTickISR) were necessary.
- * Additionally all "annoying" tabs have been replaced by spaces.
- *
- * The original file is available under the following license:
- */
 
 /*
     FreeRTOS V8.2.3 - Copyright (C) 2015 Real Time Engineers Ltd.

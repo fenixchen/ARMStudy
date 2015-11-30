@@ -5,14 +5,13 @@ AS = $(TOOLCHAIN)as
 LD = $(TOOLCHAIN)ld
 OBJCOPY = $(TOOLCHAIN)objcopy
 AR = $(TOOLCHAIN)ar
+OBJDUMP = $(TOOLCHAIN)objdump
 
 OFLAG = -o
 INCLUDEFLAG = -I
 CPUFLAG = -mcpu=arm926ej-s
-WFLAG = -Wall -Wextra -Werror
-CFLAGS = $(CPUFLAG) $(WFLAG)
-
-DEB_FLAG = -g -DDEBUG
+WFLAG = -Wall -Wextra -Werror -Wno-error=unused-value
+CFLAGS = $(CPUFLAG) $(WFLAG) -O0 -g3
 
 LD_SCRIPT=Drivers/qemu.ld
 
@@ -49,12 +48,13 @@ $(DISPLAY_BIN):objdir $(DISPLAY_ELF)
 
 $(DISPLAY_ELF):$(OBJS) $(LD_SCRIPT)
 	$(LD) -o $@ -T$(LD_SCRIPT) $(OBJS)
+	$(OBJDUMP) -D $@ > $(subst .elf,.s,$(DISPLAY_ELF))
 
 objdir:
 	@$(foreach d, $(OBJ_DIRS), mkdir -p $(d)) 
 
 clean:
-	rm -rf $(OBJDIR) $(DISPLAY_BIN) $(DISPLAY_ELF)
+	rm -rf $(OBJDIR) $(DISPLAY_BIN) $(DISPLAY_ELF) display.s
 
 $(OBJDIR)Drivers/startup.o:Drivers/startup.s
 	$(CC) -c $< -o $@ $(CFLAGS)
