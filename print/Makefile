@@ -14,3 +14,9 @@ test.bin:test.elf
 
 clean:
 	-rm startup.o test.o test.elf test.bin -rf
+
+run:
+	qemu-system-arm -M versatilepb -m 128M -nographic -kernel test.bin
+
+debug:
+	qemu-system-arm -M versatilepb -m 128M -nographic -kernel test.bin -s -S
